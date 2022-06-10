@@ -80,7 +80,7 @@ def get_ip():
     request_currentip = urllib.request.Request(url=website_pick, headers=headers)
     ip = urllib.request.urlopen(request_currentip).read().decode('utf-8')
     if website_pick == 'http://ip4only.me/api/':
-        ip = re.search("IPv4,(.*?),Remaining", ip).group(1)
+        ip = re.search("IPv4,(.*?),", ip).group(1)
     return ip
 
 def get_nordvpn_servers():
